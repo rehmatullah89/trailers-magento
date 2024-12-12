@@ -1,0 +1,98 @@
+<?php 
+
+$pieces = explode("/", $_GET['id']);
+$my_product = Mage::getModel('catalog/product')->load($pieces[0]);
+$my_product_url = $my_product->getProductUrl();
+$my_product_name = $my_product->getName();
+$my_product_item_no= $my_product->getitem_no();
+
+/* Get categories of a product --code-- */
+// $cats = $my_product->getCategoryIds();
+// foreach ($cats as $category_id) {
+    // $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+    // echo "cat=".$_cat->getName()."</br>";
+// } 
+
+// echo "<br>".$my_product_url;
+// echo "<br>".$my_product_name;
+// echo "<br>".$my_product_item_no;
+
+?>
+<!-- Begin Freedback Form -->
+<p>At All Pro, we are committed to keeping our Inventory updated and fresh with the latest and newest Trailers out there. Due to the high turnover of our Trailer Inventory ... &nbsp;please feel free to call, email or visit our TRAILER SUPERSTORE to check on the most&nbsp;current availability.</p>
+<form action="http://www.freedback.com/mail.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+<div><input id="acctid" type="hidden" name="acctid" value="oz3uov6fc1xh6x48" /> <input id="formid" type="hidden" name="formid" value="1104886" /> <input id="required_vars" type="hidden" name="required_vars" value="name,field-a3827ec2c4c6ed1,field-8ef129ff3abb880,email,field-7926212a8c58cb3,field-09d55ab7eaff495,field-b205f3b0220eda9,field-2a363002d66375f,field-c1789daecb90de8,field-b0b609d5bce7fe6,field-36c0165136bb6ae" /></div>
+<table border="0" cellspacing="5" cellpadding="5">
+<tbody>
+<tr>
+<td valign="top"><strong>Item Number:</strong></td>
+<td valign="top"><input id="item_no" type="text" name="item_no" value="<?php echo $my_product_item_no;?>" size="40" /></td>
+</tr>
+<tr>
+<td valign="top"><strong>Product Name</strong></td>
+<td valign="top"><input id="p_name" type="text" name="p_name" value="<?php echo $my_product_name;?>" size="40" /></td>
+</tr>
+<tr>
+<td valign="top"><strong>Product URL:</strong></td>
+<td valign="top"><input id="p_url" type="text" name="p_url" value="<?php echo $my_product_url;?>" size="40" /></td>
+</tr>
+<tr><td>--<td></tr>
+<tr>
+<td valign="top"><strong>Your Name:</strong></td>
+<td valign="top"><input id="name" type="text" name="name" value="" size="40" /></td>
+</tr>
+<tr>
+<td valign="top"><strong>City &amp; State:</strong></td>
+<td valign="top"><input id="field-a3827ec2c4c6ed1" type="text" name="field-a3827ec2c4c6ed1" value="" size="40" /></td>
+</tr>
+<tr>
+<td valign="top"><strong>Area Code &amp; Phone Number:</strong></td>
+<td valign="top"><input id="field-8ef129ff3abb880" type="text" name="field-8ef129ff3abb880" value="" size="40" /></td>
+</tr>
+<tr>
+<td valign="top"><strong>Email Address:</strong></td>
+<td valign="top"><input id="email" type="text" name="email" value="" size="40" /></td>
+</tr>
+<tr>
+<td colspan="2" valign="top">What type of Trailer(s) are you interested in?</td>
+</tr>
+<tr>
+<td valign="top">&nbsp;</td>
+<td valign="top"><input id="field-7926212a8c58cb3_0" type="radio" name="field-7926212a8c58cb3" value="Enclosed Trailers" /> Enclosed Trailers <input id="field-7926212a8c58cb3_1" type="radio" name="field-7926212a8c58cb3" value="Car Trailers" /> Car Trailers <input id="field-7926212a8c58cb3_2" type="radio" name="field-7926212a8c58cb3" value="Racing Trailers" /> Racing Trailers <input id="field-7926212a8c58cb3_3" type="radio" name="field-7926212a8c58cb3" value="Equipment Trailers" /> Equipment Trailers <input id="field-7926212a8c58cb3_4" type="radio" name="field-7926212a8c58cb3" value="Dump Trailers" /> Dump Trailers <input id="field-7926212a8c58cb3_5" type="radio" name="field-7926212a8c58cb3" value="Landscape Trailers" /> Landscape Trailers <input id="field-7926212a8c58cb3_6" type="radio" name="field-7926212a8c58cb3" value="Utility Trailers" /> Utility Trailers <input id="field-7926212a8c58cb3_7" type="radio" name="field-7926212a8c58cb3" value="ATV Trailers" /> ATV Trailers <input id="field-7926212a8c58cb3_8" type="radio" name="field-7926212a8c58cb3" value="Motorcycle Trailers" /> Motorcycle Trailers <input id="field-7926212a8c58cb3_9" type="radio" name="field-7926212a8c58cb3" value="Snowmobile Trailers" /> Snowmobile Trailers</td>
+</tr>
+<tr>
+<td valign="top"><strong>Open or Enclosed Trailer?</strong></td>
+<td valign="top"><select id="field-09d55ab7eaff495" name="field-09d55ab7eaff495"> <option value="Open Trailer">Open Trailer</option> <option value="Enclosed Trailer">Enclosed Trailer</option> </select></td>
+</tr>
+<tr>
+<td valign="top"><strong>What will you be hauling?</strong></td>
+<td valign="top"><select id="field-b205f3b0220eda9" name="field-b205f3b0220eda9"> <option value="Stone">Stone</option> <option value="Mulch">Mulch</option> <option value="Cars">Cars</option> <option value="Tractors">Tractors</option> <option value="Quads">Quads</option> <option value="Snowmobiles">Snowmobiles</option> <option value="Motorcycles">Motorcycles</option> <option value="Heavy Equipment">Heavy Equipment</option> <option value="Race Cars">Race Cars</option> <option value="Other">Other</option> </select></td>
+</tr>
+<tr>
+<td valign="top"><strong>Do you need Trailer Delivery?</strong></td>
+<td valign="top"><select id="field-2a363002d66375f" name="field-2a363002d66375f"> <option value="Yes">Yes</option> <option value="No">No</option> <option value="Not sure yet">Not sure yet</option> </select></td>
+</tr>
+<tr>
+<td valign="top"><strong>Do you need Trailer Financing?</strong></td>
+<td valign="top"><select id="field-c1789daecb90de8" name="field-c1789daecb90de8"> <option value="Yes">Yes</option> <option value="No">No</option> <option value="Not sure yet">Not sure yet</option> </select></td>
+</tr>
+<tr>
+<td colspan="2" valign="top">How soon do you need your Trailer?</td>
+</tr>
+<tr>
+<td valign="top">&nbsp;</td>
+<td valign="top"><input id="field-b0b609d5bce7fe6" type="text" name="field-b0b609d5bce7fe6" value="" size="40" /></td>
+</tr>
+<tr>
+<td colspan="2" valign="top">Questions? Comments? Tell us more about your Trailer needs?</td>
+</tr>
+<tr>
+<td valign="top">&nbsp;</td>
+<td valign="top"><textarea id="field-36c0165136bb6ae" name="field-36c0165136bb6ae" rows="6" cols="40"></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value=" Submit Form " /></td>
+</tr>
+</tbody>
+</table>
+</form><!-- End Freedback Form -->

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NeoTheme (Neo Industries Pty Ltd)
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to Neo Industries Pty LTD Non-Distributable Software Modification License (NDSML)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.neotheme.com/legal/licenses/NDSM.html
+ * If the license is not included with the package or for any other reason, 
+ * you did not receive your licence please send an email to 
+ * license@neotheme.com so we can send you a copy immediately.
+ *
+ * This software comes with no warrenty of any kind. By Using this software, the user agrees to hold 
+ * Neo Industries Pty Ltd harmless of any damage it may cause.
+ *
+ * @category    modules
+ * @module      NeoTheme_Blog
+ * @copyright   Copyright (c) 2011 Neo Industries Pty Ltd (http://www.neotheme.com)
+ * @license     http://www.neotheme.com/  Non-Distributable Software Modification License(NDSML 1.0)
+ */
+-->
+<config>
+    <menu>
+        <neotheme_blog translate="title" module="neotheme_blog">
+            <title><![CDATA[Blog]]>
+            </title>
+            <sort_order>85</sort_order>
+            <children>
+                <post translate="title" module="neotheme_blog">
+                    <title><![CDATA[Posts]]></title>
+                    <action>adminhtml/neotheme_blog_post/</action>
+                </post>	
+                <category translate="title" module="neotheme_blog">
+                    <title><![CDATA[Categories]]></title>
+                    <action>adminhtml/neotheme_blog_category/</action>
+                </category>	 
+                <comment translate="title" module="neotheme_blog">
+                    <title><![CDATA[Comments]]></title>
+                    <action>adminhtml/neotheme_blog_comment/</action>
+                </comment>	
+             <!--   <unittest translate="title" module="neotheme_blog">
+                      <title><![CDATA[Unit Testing]]></title>
+                      <action>adminhtml/neotheme_blog_unittest/</action>
+                      <children>
+                            <postnew translate="title" module="neotheme_blog">
+                                <title><![CDATA[Post New Save]]></title>
+                                <action>adminhtml/neotheme_blog_unittest/postnewsave</action>
+                            </postnew>
+                            <postdelete translate="title" module="neotheme_blog">
+                                <title><![CDATA[Post Delete]]></title>
+                                <action>adminhtml/neotheme_blog_unittest/postdelete</action>
+                            </postdelete>
+                            <categorynew translate="title" module="neotheme_blog">
+                                <title><![CDATA[Category New Save]]></title>
+                                <action>adminhtml/neotheme_blog_unittest/categorynewsave</action>
+                            </categorynew>
+                            <categorydelete translate="title" module="neotheme_blog">
+                                <title><![CDATA[Category Delete]]></title>
+                                <action>adminhtml/neotheme_blog_unittest/categorydelete</action>
+                            </categorydelete>
+                      </children>
+                </unittest>	-->
+            </children>
+        </neotheme_blog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <neotheme_blog translate="title" module="neotheme_blog">
+                        <title>Blog</title>
+                        <sort_order>85</sort_order>
+                        <children>
+                            <post translate="title" module="neotheme_blog">
+                                <title><![CDATA[Posts]]></title>
+                            </post>	
+                            <category translate="title" module="neotheme_blog">
+                                <title><![CDATA[Categories]]></title>
+                            </category>	   
+                            <comment translate="title" module="neotheme_blog">
+                                <title><![CDATA[Comments]]></title>
+                                <action>adminhtml/neotheme_blog_comment/</action>
+                            </comment>
+                          <!--  <unittest translate="title" module="neotheme_blog">
+                                <title><![CDATA[Unit Testing]]></title>
+                            </unittest>	 -->
+                        </children>
+                    </neotheme_blog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

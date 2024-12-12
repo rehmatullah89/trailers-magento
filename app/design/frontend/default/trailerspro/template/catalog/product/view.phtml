@@ -1,0 +1,237 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+
+<?php 
+$product = Mage::getModel('catalog/product')->load($_product->getId());
+$qty = round($product->getStockItem()->getQty());
+?>
+
+<style type="text/css">
+#testimonialbox {
+     margin-left: -383px;
+    margin-top: -36px;
+    position: fixed;
+    width: 120px;
+}    
+</style>
+<div id="testimonialbox">
+<!--You may install the following code in an external JavaScript file if you like-->
+
+		<script type="text/javascript">
+
+		var lhnAccountN=2487; //LiveHelpNow account #
+
+		var lhnButtonN = 35; //Button #
+
+		var lhnInviteEnabled = 1; //Invite visitor to chat automatically
+
+		var lhnInviteChime = 0; //1 = disable invite beep sound,0 = keep invite beep sound enabled
+
+		var lhnWindowN = 0; //Chat window #, leave 0 to open default window setup for your account
+
+		var lhnDepartmentN = 0; //Department #, leave 0 to not route by department
+
+		var lhnCustomInvitation = ''; //change to 1 to use custom invitation, see this article for customization instructions: http://help.livehelpnow.net/article.aspx?cid=1&amp;aid=1739
+
+		var lhnCustom1 = ''; //Custom1 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnCustom2 = ''; //Custom2 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnCustom3 = ''; //Custom3 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnTrackingEnabled = 't'; //change to 'f' to disable visitor tracking
+
+		var lhnVersion = 5.3; //LiveHelpNow version #
+
+		var lhnJsHost = (("https:" == document.location.protocol) ? "https://" : "http://"); //to force secure chat replace this line with: var lhnJsHost = 'https://';
+
+		var lhnScriptSrc = lhnJsHost + 'www.livehelpnow.net/lhn/scripts/livehelpnow.aspx?lhnid=' + lhnAccountN + '&amp;iv=' + lhnInviteEnabled + '&amp;d=' + lhnDepartmentN + '&amp;ver=' + lhnVersion + '&amp;rnd=' + Math.random();
+
+		var lhnScript = document.createElement("script"); lhnScript.type = "text/javascript";lhnScript.src = lhnScriptSrc;
+
+		if (window.addEventListener) {
+
+			window.addEventListener('load', function () { document.getElementById('lhnContainer').appendChild(lhnScript); }, false);
+
+		}
+
+		else if (window.attachEvent) {
+
+			window.attachEvent('onload', function () { document.getElementById('lhnContainer').appendChild(lhnScript); });
+
+		}
+
+		</script>
+
+		<!--end http://www.livehelpnow.net  -->
+
+		
+<div style="float: left; margin-bottom: 10px; margin-top: -17px; margin-left: -2px; overflow: hidden; width: 150px;" id="lhnContainer">
+
+			<div id="lhnChatButton"><a id="aLHNBTN" onclick="OpenLHNChat();return false;" href="#"><img border="0" id="lhnchatimg" alt="Live help" src="http://www.livehelpnow.net/lhn/functions/imageserver.ashx?lhnid=2487&amp;java=No&amp;zimg=35&amp;sres=1600x900&amp;sdepth=24&amp;custom1=&amp;custom2=&amp;custom3=&amp;t=t&amp;d=0&amp;rndstr=0.7089543821423537&amp;referrer=http%3A//www.trailersuperstore.com/&amp;pagetitle=Used%20Trailers%20for%20Sale%20%7C%20Pre-owned%20Car%2C%20Motorcycle%20and%20Cargo%20Trailers%20%7C%20Trailer%20Superstore&amp;pageurl=http%3A//www.trailersuperstore.com/used-trailers"></a></div>			
+
+		<script type="text/javascript" src="http://www.livehelpnow.net/lhn/scripts/livehelpnow.aspx?lhnid=2487&amp;iv=1&amp;d=0&amp;ver=5.3&amp;rnd=0.5455214940453026"></script></div>
+	
+	
+
+	
+
+</div>
+<?php
+$productId = $_product->getId(); 
+$attSet = Mage::getModel('catalog/product')->load($productId)->getAttributeSetId(); 
+$attSetName = Mage::getModel('eav/entity_attribute_set')->load($attSet)->getAttributeSetName();
+?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<!--gallery-->
+<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+						
+    <div class="gallery">
+        
+							<div id="wrapper">
+                                                            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h1 class="single-pro-title-bar"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h1>
+								  <?php echo $this->getChildHtml('media') ?>
+							</div>
+								
+						</div>
+    
+						<div class="products">
+							<div class="item-discription">
+                                                                <?php echo $this->getChildHtml('alert_urls') ?>
+                                                                <div class="link-panel">
+									<a class="speces print-product" href="<?php echo $this->getUrl('pdffree/product/print/').'id/'.$_product->getId(); ?>/">Print this Information</a>
+                                                                </div>
+								<strong class="title-bar title-bar01">    
+							        <?php if($attSetName != 'Default'): ?>
+    								<span class="item-num">Item #: <?php echo $_product->getitem_no();?></span></br></br>
+                                                                <?php else:?>
+                                                                <?php echo $this->getChildHtml('product_type_data') ?>
+                                                               <?php endif; ?>
+							        <span style="color:#00A8E4;">Features</span>
+								</strong>
+                                                                
+                                                               <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+								<div class="price-panel01">
+									<span class="older-price">
+                                                                        <?php if($_product->getwas_pro() !=''): ?>
+                                                                            Was: <em>$<?php echo $_product->getwas_pro();?></em>
+                                                                        <?php endif; ?>
+                                                                        <?php if(($attSetName == 'Default') && ($_product->getis_sold() =='0') && ($qty>0)): ?>  
+                                                                        <div class="link-panel">
+									<a class="speces" href="<?php echo $this->getAddToCartUrl($_product) ?>" title="<?php echo $this->__('Add to Cart') ?>">Add to Cart</a>									
+								        </div>
+                                                                        <?php endif; ?>
+                                                                        </span>
+                                                                        
+									<span class="new-price">
+                                                                            <?php if(($attSetName == 'Default') && ($_product->getis_sold() =='1') && ($qty>0)): ?> 
+                                                                            <div class="pro-sold"><img src="<?php echo $this->getSkinUrl('images/sold-2.png'); ?>" alt="sold" /></div>
+                                                                            <?php endif; ?>
+                                                                        <?php echo $this->getPriceHtml($_product, false); ?>
+                                                                        
+                                                                        </span>
+                                                                        
+								</div>
+                                                            <?php if($attSetName != 'Default'): ?>
+								<div class="info-block">
+									<ul>
+										<li><strong>Condition:<span><?php echo $_product->getAttributeText('condition'); ?></span></strong></li>
+										<li><strong>Size:<span><?php
+                                                                                if(is_array($_product->getAttributeText('trailer_size'))):
+                                                                                echo $size = implode(", ",$_product->getAttributeText('trailer_size'));
+                                                                                else:
+                                                                                echo $_product->getAttributeText('trailer_size') ;  
+                                                                                endif;
+                                                                                ?>
+                                                                                        </span></strong></li>
+										<li><strong>Manufacturer:<span><?php echo $_product->getAttributeText('manufacturer'); ?></span></strong></li>
+										<li><strong>Axle:<span><?php echo $_product->getaxle();?></span></strong></li>
+									</ul>
+									<ul>
+										<li><strong>GVWR:<span><?php echo $_product->getgvwr();?></span></strong></li>
+										<li><strong>Empty Weight:<span><?php echo $_product->getempty_weight();?></span></strong></li>
+										<li><strong>Load Capacity:<span><?php echo $_product->getload_capacity();?></span></strong></li>
+										<li><strong>Model #:<span><?php echo $_product->getmodel();?></span></strong></li>
+										<li><strong>Brakes:<span><?php echo $_product->getAttributeText('brakes'); ?></span></strong></li>
+                                                      
+									</ul>
+								</div>
+								<div class="text-holder"> 
+                                                                    <strong class="title-text">Rear Door/Gate:<span>
+                                                                        <?php
+                                                                        if(is_array($_product->getAttributeText('rear_door_gate'))):
+                                                                        echo $rear_door = implode(", ", $_product->getAttributeText('rear_door_gate')); 
+                                                                        else:
+                                                                        echo $_product->getAttributeText('rear_door_gate');
+                                                                        endif;
+                                                                        ?>    
+                                                                        </span></strong> 
+                                                                    <strong class="title-text">Side Door/Gate:<span>
+                                                                            <?php
+                                                                         if(is_array($_product->getAttributeText('side_door_gate'))):
+                                                                         echo $side_door = implode(", ", $_product->getAttributeText('side_door_gate')); 
+                                                                         else:
+                                                                         echo $_product->getAttributeText('side_door_gate');
+                                                                         endif;
+                                                                        ?>
+                                                                        </span></strong> </div>
+								<div class="color-holder"> <strong>Color(s):</strong>
+									<ul>
+										 <?php if($_product->gettrailer_color_1() != ''): ?>
+										<li><a style="background-color:<?php echo $_product->gettrailer_color_1();?>" href="#"><?php echo $_product->gettrailer_color_1();?></a></li>
+										<?php endif; ?>
+                                                                                <?php if($_product->gettrailer_color_2() != ''): ?>
+                                                                                <li><a style="background-color:<?php echo $_product->gettrailer_color_2();?>" href="#"><?php echo $_product->gettrailer_color_2();?></a></li>
+										<?php endif; ?>
+                                                                                <?php if($_product->gettrailer_color_3() != ''): ?>
+                                                                                <li><a style="background-color:<?php echo $_product->gettrailer_color_3();?>" href="#"><?php echo $_product->gettrailer_color_3();?></a></li>
+										<?php endif; ?>
+                                                                                <?php if($_product->gettrailer_color_4() != ''): ?>
+                                                                                <li><a style="background-color:<?php echo $_product->gettrailer_color_4();?>" href="#"><?php echo $_product->gettrailer_color_4();?></a></li>
+										<?php endif; ?>
+                                                                                <?php if($_product->gettrailer_color_5() != ''): ?>
+                                                                                <li><a style="background-color:<?php echo $_product->gettrailer_color_5();?>" href="#"><?php echo $_product->gettrailer_color_5();?></a></li>
+									        <?php endif; ?>
+									</ul>
+								</div>
+                                                            <?php endif; ?>
+							</div>
+						</div>
+    </form>

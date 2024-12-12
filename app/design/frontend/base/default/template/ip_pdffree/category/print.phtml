@@ -1,0 +1,23 @@
+<?php 
+    $_cat = $this->getCurrentCategory();
+    $query='?'.http_build_query($this->getRequest()->getQuery());
+?>
+
+<div class="pdfheader-print-category">
+<?php if (Mage::getStoreConfig('pdffree/options/enable_preview')): ?>
+<a target="_blank" class="print-product" href="<?php echo $this->getUrl('pdffree/category/view/').'id/'.$_cat->getId().'/'.$query; ?>"> 
+    <img title="preview PDF" src="<?php echo $this->getSkinUrl('ip_pdffree/images/pdf_view.png'); ?>"/>
+</a> 
+<?php endif;?>
+<?php if (Mage::getStoreConfig('pdffree/options/enable_stream')): ?>
+<a class="print-product" href="<?php echo $this->getUrl('pdffree/category/print/').'id/'.$_cat->getId().'/'.$query; ?>"> 
+    <img title="print PDF" src="<?php echo $this->getSkinUrl('ip_pdffree/images/pdf_download.png'); ?>"/>
+</a> 
+<?php endif;?>
+<?php if (Mage::getStoreConfig('pdffree/options/enable_save')): ?>
+<a class="print-product" href="<?php echo $this->getUrl('pdffree/category/save/').'id/'.$_cat->getId().'/'.$query; ?>"> 
+    <img title="save PDF" src="<?php echo $this->getSkinUrl('ip_pdffree/images/pdf_save.png'); ?>"/>
+</a> 
+<?php endif;?>
+</div>
+

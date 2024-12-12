@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style>
+#testimonialbox {
+     margin-left: -378px;
+    position: fixed;
+    top: 410px;
+    width: 120px;
+}    
+</style>
+<div id="testimonialbox">
+<!--You may install the following code in an external JavaScript file if you like-->
+
+		<script type="text/javascript">
+
+		var lhnAccountN=2487; //LiveHelpNow account #
+
+		var lhnButtonN = 35; //Button #
+
+		var lhnInviteEnabled = 1; //Invite visitor to chat automatically
+
+		var lhnInviteChime = 0; //1 = disable invite beep sound,0 = keep invite beep sound enabled
+
+		var lhnWindowN = 0; //Chat window #, leave 0 to open default window setup for your account
+
+		var lhnDepartmentN = 0; //Department #, leave 0 to not route by department
+
+		var lhnCustomInvitation = ''; //change to 1 to use custom invitation, see this article for customization instructions: http://help.livehelpnow.net/article.aspx?cid=1&amp;aid=1739
+
+		var lhnCustom1 = ''; //Custom1 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnCustom2 = ''; //Custom2 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnCustom3 = ''; //Custom3 feed value please use encodeURIComponent() function to encode your values
+
+		var lhnTrackingEnabled = 't'; //change to 'f' to disable visitor tracking
+
+		var lhnVersion = 5.3; //LiveHelpNow version #
+
+		var lhnJsHost = (("https:" == document.location.protocol) ? "https://" : "http://"); //to force secure chat replace this line with: var lhnJsHost = 'https://';
+
+		var lhnScriptSrc = lhnJsHost + 'www.livehelpnow.net/lhn/scripts/livehelpnow.aspx?lhnid=' + lhnAccountN + '&amp;iv=' + lhnInviteEnabled + '&amp;d=' + lhnDepartmentN + '&amp;ver=' + lhnVersion + '&amp;rnd=' + Math.random();
+
+		var lhnScript = document.createElement("script"); lhnScript.type = "text/javascript";lhnScript.src = lhnScriptSrc;
+
+		if (window.addEventListener) {
+
+			window.addEventListener('load', function () { document.getElementById('lhnContainer').appendChild(lhnScript); }, false);
+
+		}
+
+		else if (window.attachEvent) {
+
+			window.attachEvent('onload', function () { document.getElementById('lhnContainer').appendChild(lhnScript); });
+
+		}
+
+		</script>
+
+		<!--end http://www.livehelpnow.net  -->
+
+		
+<div style="float: left; margin-bottom: 10px; margin-top: -17px; margin-left: -2px; overflow: hidden; width: 150px;" id="lhnContainer">
+
+			<div id="lhnChatButton"><a id="aLHNBTN" onclick="OpenLHNChat();return false;" href="#"><img border="0" id="lhnchatimg" alt="Live help" src="http://www.livehelpnow.net/lhn/functions/imageserver.ashx?lhnid=2487&amp;java=No&amp;zimg=35&amp;sres=1600x900&amp;sdepth=24&amp;custom1=&amp;custom2=&amp;custom3=&amp;t=t&amp;d=0&amp;rndstr=0.7089543821423537&amp;referrer=http%3A//www.trailersuperstore.com/&amp;pagetitle=Used%20Trailers%20for%20Sale%20%7C%20Pre-owned%20Car%2C%20Motorcycle%20and%20Cargo%20Trailers%20%7C%20Trailer%20Superstore&amp;pageurl=http%3A//www.trailersuperstore.com/used-trailers"></a></div>			
+
+		<script type="text/javascript" src="http://www.livehelpnow.net/lhn/scripts/livehelpnow.aspx?lhnid=2487&amp;iv=1&amp;d=0&amp;ver=5.3&amp;rnd=0.5455214940453026"></script></div>
+	
+	
+
+	
+
+</div>
+<?php echo $pageData->getPageContent(); ?>

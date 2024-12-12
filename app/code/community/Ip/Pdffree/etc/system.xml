@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <ip translate="label">
+            <label>EcommerceOffice.com</label>
+            <sort_order>250</sort_order>
+        </ip>
+    </tabs>
+    <sections>
+        <pdffree translate="label" module="pdffree">
+            <label>PDF Free</label>
+            <tab>ip</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <options>   
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                	        
+                    <fields>    
+                        <enable_preview translate="label">
+                            <label>PDF preview link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_preview>                      
+                        <enable_stream translate="label">
+                            <label>PDF stream link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_stream>                      
+                        <enable_save translate="label">
+                            <label>PDF save link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_save>                      
+                        <css translate="label">
+                            <label>CSS file</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pdffree/source_Cssfile</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </css>   
+                        <header translate="label">
+                            <label>Static block for header</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </header>  
+                        <footer translate="label">
+                            <label>Font color</label>
+                            <label>Static block for footer</label>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </footer>                          
+<!--                        <header translate="label">
+                            <label>Last update</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store></show_in_store>
+                        </header>                         -->
+<!--                        <extra translate="label">
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>pdffree/extra</frontend_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store></show_in_store>
+                        </extra>                         -->
+                    </fields>                                     
+                </options>
+                <promo>
+                    <frontend_model>pdffree/promo</frontend_model>
+                    <sort_order>99999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </promo>          	
+                <developer>
+                    <frontend_model>pdffree/developer</frontend_model>
+                    <sort_order>999999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </developer>          	
+            </groups>
+        </pdffree>
+    </sections>
+</config>

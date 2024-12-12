@@ -1,0 +1,71 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php if($_menu): ?>
+<!--<div class="nav-container">-->
+    <div class="menu-holder">
+        <div class="open-close">
+	<a class="opener" href="#">ReadMore</a>
+	<div class="slide">
+			<div id="menu">
+			<ul id="nav">
+                          <?php echo $_menu ?>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8850" id="menu-item-8850"><a href="<?php echo $this->getUrl('') ?>trailer-tradein">Trailer Trade-In</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8849" id="menu-item-8849"><a href="<?php echo $this->getUrl('') ?>trailer-tradein/trailer-trade-in-form">Trailer Trade-In Form</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8863" id="menu-item-8863"><a href="<?php echo $this->getUrl('') ?>plows-spreaders">Snow Plows &amp; Spreaders</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8864" id="menu-item-8864"><a href="<?php echo $this->getUrl('') ?>plows-spreaders/snowdogg-snow-plows">SnowDogg Snow Plows</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8865" id="menu-item-8865"><a href="<?php echo $this->getUrl('') ?>plows-spreaders/hiniker-snow-plows">Hiniker Snow Plows</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8866" id="menu-item-8866"><a href="<?php echo $this->getUrl('') ?>plows-spreaders/saltdogg-salt-spreaders">SaltDogg Salt Spreaders</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18761" id="menu-item-18761"><a href="<?php echo $this->getUrl('') ?>other-products/dump-inserts">Dump Inserts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8851" id="menu-item-8851"><a href="<?php echo $this->getUrl('') ?>trailer-services">Our Services</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8859" id="menu-item-8859"><a href="<?php echo $this->getUrl('') ?>trailer-services/financing">Trailer Financing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8860" id="menu-item-8860"><a href="<?php echo $this->getUrl('') ?>trailer-services/trailer-delivery">Trailer Delivery</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8861" id="menu-item-8861"><a href="<?php echo $this->getUrl('') ?>trailer-services/trailer-repair">Trailer Repair</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8862" id="menu-item-8862"><a href="<?php echo $this->getUrl('') ?>trailer-services/trailer-warranties">Trailer Warranty</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15347" id="menu-item-15347"><a href="<?php echo $this->getUrl('') ?>trailer-services/trailer-customization">Trailer Customization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18762" id="menu-item-18762"><a href="<?php echo $this->getUrl('') ?>other-products">After Market Accessories</a></li>
+</ul>
+</li>                        
+                        </ul>
+</div>
+</div>
+</div>
+<?php endif ?>

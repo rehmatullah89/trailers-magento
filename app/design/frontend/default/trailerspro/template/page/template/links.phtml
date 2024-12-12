@@ -1,0 +1,73 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * @see Mage_Page_Block_Template_Links
+ */
+?>
+<?php //$_links = $this->getLinks(); ?>
+<?php //if(count($_links)>0): ?>
+<!--<ul class="links"<?php //if($this->getName()): ?> id="<?php //echo $this->getName() ?>"<?php //endif;?>>-->
+    <?php //foreach($_links as $_link): ?>
+        <?php //if ($_link instanceof Mage_Core_Block_Abstract):?>
+            <?php //echo $_link->toHtml() ?>
+        <?php //else: ?>
+<!--            <li<?php //if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php //if($_link->getIsFirst()): ?>first<?php //endif; ?><?php //if($_link->getIsLast()): ?> last<?php //endif; ?>"<?php //endif; ?> <?php //echo $_link->getLiParams() ?>><?php //echo $_link->getBeforeText() ?><a href="<?php //echo $_link->getUrl() ?>" title="<?php //echo $_link->getTitle() ?>" <?php //echo $_link->getAParams() ?>><?php //echo $_link->getLabel() ?></a><?php //echo $_link->getAfterText() ?></li>-->
+        <?php //endif;?>
+    <?php //endforeach; ?>
+<!--</ul>-->
+<?php //endif; ?>
+
+<ul class="top-nav">
+<li><a href="<?php echo $this->getUrl('contact'); ?>">Contact</a>
+    <ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-435" id="menu-item-435"><a href="<?php echo $this->getUrl('') ?>contact-us/hours-directions">Hours &amp; Directions</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-434" id="menu-item-434"><a href="<?php echo $this->getUrl('') ?>sitemap">Sitemap</a></li>
+</ul>
+</li>
+<li><a href="<?php echo $this->getUrl('').'customer/account/' ?>">My Account</a></li>
+<li><a href="<?php echo $this->getUrl('about-magento-demo-store'); ?>">About</a>
+ <ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12962" id="menu-item-12962"><a href="<?php echo $this->getUrl('') ?>testimonials">Testimonials!</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-444" id="menu-item-444"><a href="<?php echo $this->getUrl('') ?>about-all-pro/news-press">News &amp; More</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446" id="menu-item-446"><a href="<?php echo $this->getUrl('') ?>about-all-pro/trailer-articles">Trailer Articles</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443" id="menu-item-443"><a href="<?php echo $this->getUrl('') ?>about-all-pro/in-the-spotlight">In The Spotlight!</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441" id="menu-item-441"><a href="<?php echo $this->getUrl('') ?>about-all-pro/employment">Employment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440" id="menu-item-440"><a href="<?php echo $this->getUrl('') ?>about-all-pro/sponsors">Sponsors</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439" id="menu-item-439"><a href="<?php echo $this->getUrl('') ?>about-all-pro/manufacturers">Manufacturers List</a></li>
+</ul>
+</li>
+<li><a href="<?php echo $this->getUrl('tss-store'); ?>">TSS Store</a></li>
+<li><a href="<?php echo $this->getUrl('areas-we-serve'); ?>">Areas We Serve</a></li>
+<li><a href="<?php echo $this->getUrl('towing-products'); ?>">Towing Products</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18757" id="menu-item-18757"><a href="<?php echo $this->getUrl('') ?>towing-products/cargo-management">Cargo Management</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18758" id="menu-item-18758"><a href="<?php echo $this->getUrl('') ?>towing-products/trailer-hitches">Trailer Hitches</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18760" id="menu-item-18760"><a href="<?php echo $this->getUrl('') ?>towing-products/towing-accessories">Towing Accessories</a></li>
+</ul>
+</li>
+</ul>

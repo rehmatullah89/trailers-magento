@@ -1,0 +1,14 @@
+#menu ul li{
+	float:left;
+	margin:0 0 0 20px;
+}
+.top-panel{
+	max-width:530px;
+}
+.tel{
+	font-size:11px;
+}
+.chat-call .chat.call{
+	color:#fff;
+	font-size:20px;
+}

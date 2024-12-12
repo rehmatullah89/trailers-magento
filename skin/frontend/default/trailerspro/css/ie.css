@@ -1,0 +1,23 @@
+#nav > li{
+	margin:0 2px;
+}
+.top-panel{
+	max-width:800px;
+}
+.tel{
+	font-size:11px;
+}
+.chat-call .chat.call{
+	color:#fff;
+	font-size:20px;
+}
+.img-holder:after{display: none;}
+.ie-hot-deals{
+    display: block !important;
+    bottom: -18px;
+    height: 72px;
+    position: absolute;
+    right: -15px;
+    width: 101px;
+    z-index: 999;
+}
